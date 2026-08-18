@@ -679,7 +679,7 @@ function render(index) {
   panelTable.innerHTML = [
     ['Координаты', origin.lat.toFixed(3) + ', ' + origin.lng.toFixed(3)],
     ['Ветер', frame.speedKmh.toFixed(0) + ' км/ч из ' + frame.fromLabel],
-    ['Снос огня', 'на ' + frame.toLabel + ' (' + frame.bearing.toFixed(0) + '°)'],
+    ['Распространение огня', 'на ' + frame.toLabel + ' (' + frame.bearing.toFixed(0) + '°)'],
     ['Температура', frame.tempC.toFixed(0) + ' °C'],
     ['Влажность воздуха', frame.humidityPct.toFixed(0) + ' %'],
     ['Влажность топлива', (frame.fuelMoisture || 0).toFixed(1) + ' %'],
