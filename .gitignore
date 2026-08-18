@@ -1,0 +1,5 @@
+# Генерируется из index.html
+tests/model.mjs
+
+node_modules/
+.DS_Store

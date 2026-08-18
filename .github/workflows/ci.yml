@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Test spread model
+        run: npm test
+
+      - name: Check page structure
+        run: |
+          grep -q "map.on('click'" index.html
+          grep -q 'api.open-meteo.com' index.html
+          grep -q 'id="slider"' index.html
+          grep -q 'smokeControl' index.html
+          grep -q 'Индикативная оценка' index.html
+          ! grep -q 'api_key' index.html
+
+      - name: Check basemaps and palette
+        run: |
+          for name in "Тёмная" "Серая" "Спутник" "OpenStreetMap"; do
+            grep -q "'$name'" index.html
+          done
+          grep -q "basemaps\['Тёмная'\].addTo(map)" index.html
+          grep -q 'L.control.layers(basemaps' index.html
+          grep -q 'rgba(226,222,248,' index.html

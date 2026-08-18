@@ -1,0 +1,13 @@
+{
+  "name": "fire-spread-sandbox",
+  "version": "0.1.0",
+  "description": "Click a map, get an animated grass fire spread forecast from live hourly wind",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/extract-model.mjs && node --check tests/model.mjs && node tests/model.test.mjs",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": ["wildfire", "fire-behaviour", "leaflet", "open-meteo", "visualisation"],
+  "license": "MIT",
+  "private": true
+}
