@@ -8,12 +8,10 @@ Click anywhere on a map and watch where a grass fire starting at that point
 would travel over the next few hours, driven by the live hourly wind forecast
 for that exact location.
 
-**[▶ Open the tool](https://USERNAME.github.io/fire-spread-sandbox/)**
+**[▶ Open the tool](https://aigulbekbayeva.github.io/fire-spread-sandbox/)**
 
 One HTML file. No backend, no API key, no build step, no install. The date is
 taken from your clock automatically.
-
-*Русская версия: [README.ru.md](README.ru.md)*
 
 ---
 
@@ -97,20 +95,10 @@ The smoke animation shows near-surface fire drift, **not** smoke dispersion.
 Real plumes rise in a convection column and travel with winds aloft. Air quality
 work needs a transport model such as HYSPLIT.
 
-## Development
-
-```bash
-npm test           # extracts the model from index.html, runs 20 checks
-npm run serve      # http://localhost:8000
-```
-
-The model lives inside `index.html` between `// ---- MODEL START` and
-`// ---- MODEL END` so the tool stays a single portable file. The test harness
-extracts that block into a module and exercises it in Node.
 
 ## Related project
 
-[**steppe-fire-era5**](https://github.com/USERNAME/steppe-fire-era5) —
+[**steppe-fire-era5**](https://github.com/aigulbekbayeva/steppe-fire-era5) —
 the retrospective counterpart. Instead of forecasting from a point you pick, it
 pulls real NASA FIRMS hotspots for a past date, clusters them into fire
 complexes, drives the same spread model with ERA5 reanalysis wind, and checks
